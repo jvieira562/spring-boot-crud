@@ -10,13 +10,13 @@ import javax.persistence.Table;
 //	Marca a classe como uma entidade
 @Entity
 //	Define o nome da classe co o nome da tabela ou podemos passar o nome da tabela
-@Table
+@Table(name = "BOOKS")
 public class BooksModel {
 
 	@Id // Define bookid como chave primaria
 	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO) // Gera um id automaticamente
-	private int bookid;
+	private long bookid;
 	@Column
 	private String bookname;
 	@Column
@@ -24,11 +24,11 @@ public class BooksModel {
 	@Column
 	private int price;
 
-	public int getBookid() {
+	public long getBookid() {
 		return bookid;
 	}
 
-	public void setBookid(int bookid) {
+	public void setBookid(long bookid) {
 		this.bookid = bookid;
 	}
 

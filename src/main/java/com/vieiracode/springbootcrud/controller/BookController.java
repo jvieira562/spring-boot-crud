@@ -30,19 +30,19 @@ public class BookController {
 
 // 	Mapeamento que traz detalhes de um livro específico
 	@GetMapping("/book/{bookid}")
-	private BooksModel getBooks(@PathVariable("bookid") int bookid) {
+	private BooksModel getBooks(@PathVariable("bookid") long bookid) {
 		return booksService.getBooksById(bookid);
 	}
 
 //	Mpeamento de exclusão que exclui um livro especificado
 	@DeleteMapping("/book/{bookid}")
-	private void deleteBook(@PathVariable("bookid") int bookid) {
+	private void deleteBook(@PathVariable("bookid") long bookid) {
 		booksService.delete(bookid);
 	}
 
 //	Mapeamento de postagem que postam os detalhes do livro no bd
 	@PostMapping("/books")
-	private int saveBook(@RequestBody BooksModel books) {
+	private long saveBook(@RequestBody BooksModel books) {
 		booksService.saveOrUpdate(books);
 		return books.getBookid();
 	}

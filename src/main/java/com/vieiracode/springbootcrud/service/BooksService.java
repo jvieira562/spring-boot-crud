@@ -24,7 +24,7 @@ public class BooksService {
 	}
 
 //	Obtem um registro específico usando o método findById() de CrudRepository
-	public BooksModel getBooksById(int id) {
+	public BooksModel getBooksById(long id) {
 		return booksRepository.findById(id).get();
 	}
 
@@ -34,12 +34,12 @@ public class BooksService {
 	}
 
 //	Deleta um registro específico usando o método deleteById() de CrudRepository
-	public void delete(int id) {
+	public void delete(Long id) {
 		booksRepository.deleteById(id);
 	}
 
 //	Atualiza um registro
-	public void update(BooksModel books, int bookid) {
+	public void update(BooksModel books, long bookid) {
 		booksRepository.save(books);
 	}
 
